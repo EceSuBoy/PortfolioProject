@@ -1,0 +1,141 @@
+﻿@functions {
+	public string IsActive(params string[] paths)
+	{
+		var currentPath = Context.Request.Path.ToString().ToLower();
+		foreach (var path in paths)
+		{
+			if (currentPath.StartsWith(path.ToLower()))
+				return "active";
+		}
+		return "";
+	}
+}
+>
+
+
+<div class="sidebar">
+	<div class="scrollbar-inner sidebar-wrapper">
+		<div class="user">
+			<div class="photo">
+				<img src="https://cdn-icons-png.flaticon.com/512/266/266033.png">
+			</div>
+			<div class="info">
+				<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+					<span>
+						Ece Su Boy
+						<span class="user-level">Admin</span>
+						<span class="caret"></span>
+					</span>
+				</a>
+				<div class="clearfix"></div>
+
+				<div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+					<ul class="nav">
+						<li>
+							<a href="#profile">
+								<span class="link-collapse">My Profile</span>
+							</a>
+						</li>
+						<li>
+							<a href="#edit">
+								<span class="link-collapse">Change Password</span>
+							</a>
+						</li>
+						<li>
+							<a href="#settings">
+								<span class="link-collapse">Settings</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<ul class="nav">
+			<li class="nav-item">
+				<a href="/Statistic/Index/">
+					<i class="la la-bar-chart"></i>
+					<p>Statistics</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="components.html">
+					<i class="la la-info"></i>
+					<p>About Me</p>
+				</a>
+			</li>
+			<li class="nav-item @IsActive("/experience/experiencelist", "/experience/createexperience", "/experience/updateexperience/")">
+				<a href="/Experience/ExperienceList/">
+					<i class="la la-file"></i>
+					<p>Experiences</p>
+				</a>
+			</li>
+			<li class="nav-item @IsActive("/todolist/createtodolist/", "/todolist/updatetodolist/")">
+				<a href="/ToDoList/Index/">
+					<i class="la la-bell"></i>
+					<p>To Do List</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="notifications.html">
+					<i class="la la-phone"></i>
+					<p>Contact Information</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="typography.html">
+					<i class="la la-image"></i>
+					<p>Portfolio</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="icons.html">
+					<i class="la la-code"></i>
+					<p>Skills</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="typography.html">
+					<i class="la la-comment-o"></i>
+					<p>References</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="typography.html">
+					<i class="la la-font"></i>
+					<p>Social Media</p>
+				</a>
+			</li>
+			<li class="nav-item @IsActive("/message/inbox", "/message/messagedetail/")">
+				<a href="/Message/Inbox/">
+					<i class="la la-envelope-o"></i>
+					<p>Inbox</p>
+				</a>
+			</li>
+			<li class="nav-item">
+				<a href="/Default/Index">
+					<i class="la la-home"></i>
+					<p>Go To Site</p>
+
+
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// Aktif sayfa yolunu al (örnek: /Experience/CreateExperience/)
+		const currentPath = window.location.pathname.toLowerCase();
+
+		// Tüm nav-item linklerini kontrol et
+		document.querySelectorAll(".nav-item a").forEach(link => {
+			const href = link.getAttribute("href").toLowerCase();
+
+			// Eğer aktif sayfa href'in içinde geçiyorsa veya tersi
+			if (currentPath.startsWith(href) || href.startsWith(currentPath)) {
+				link.parentElement.classList.add("active");
+			}
+		});
+	});
+</script>
