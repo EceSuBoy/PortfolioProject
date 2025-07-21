@@ -3,17 +3,17 @@
 <footer>
     <div class="row">
         <div class="col-full">
-            @foreach (var item in Model)
-            {
 
             <div class="footer-logo">
-                <a class="footer-site-logo" href="#0"><img src="~/hola-master/images/hello.png" alt="Homepage"></a>
+                <a class="footer-site-logo" href="#0"><img src="~/hola-master/images/Eicon.png" alt="Homepage"></a>
             </div>
+            @foreach (var item in Model)
+            {
 
             <ul class="footer-social">
                 <li>
                     <a href="@item.Url">
-                        <i class="im im-facebook" aria-hidden="true"></i>
+                            <img src="@item.Icon" alt="icon" style="width: 20px; height: 20px;" />
                         <span>@item.Title</span>
                     </a>
                 </li>
@@ -37,6 +37,35 @@
         </div>
 
     </div> <!-- end footer-bottom -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("ajaxContactForm");
+            if (!form) return; // Exit if the form doesn't exist
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+
+                fetch("/Message/SendMessage", {
+                    method: "POST",
+                    body: formData
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("Request failed");
+                        return response.text();
+                    })
+                    .then(result => {
+                        document.getElementById("messageResult").innerText = "Your message was sent successfully!";
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                        document.getElementById("messageResult").innerText = "An error occurred while sending your message.";
+                    });
+            });
+        });
+    </script>
 
 </footer> <!-- end footer -->
 <!-- photoswipe background

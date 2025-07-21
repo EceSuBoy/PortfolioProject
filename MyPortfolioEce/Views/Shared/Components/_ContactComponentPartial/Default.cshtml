@@ -18,35 +18,29 @@
 
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="">
+                <form id="ajaxContactForm" method="post">
                     <fieldset>
-
                         <div class="form-field">
-                            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                            <input name="NameSurname" type="text" placeholder="Name" required class="full-width" />
                         </div>
                         <div class="form-field">
-                            <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                            <input name="Email" type="email" placeholder="Email" required class="full-width" />
                         </div>
                         <div class="form-field">
-                            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                            <input name="Subject" type="text" placeholder="Subject" class="full-width" />
                         </div>
                         <div class="form-field">
-                            <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                            <textarea name="MessageDetail" placeholder="Your message" rows="10" cols="50" required class="full-width"></textarea>
                         </div>
                         <div class="form-field">
-                            <button class="full-width btn--primary">Submit</button>
-                            <div class="submit-loader">
-                                <div class="text-loader">Sending...</div>
-                                <div class="s-loader">
-                                    <div class="bounce1"></div>
-                                    <div class="bounce2"></div>
-                                    <div class="bounce3"></div>
-                                </div>
-                            </div>
+                            <button type="submit" class="full-width btn--primary">Send</button>
                         </div>
-
                     </fieldset>
                 </form>
+
+                <!-- AJAX result area -->
+                <div id="messageResult" style="margin-top: 1rem; color: green;"></div>
+
 
                 <!-- contact-warning -->
                 <div class="message-warning">

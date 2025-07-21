@@ -47,6 +47,65 @@ namespace MyPortfolioEce.Migrations
                     b.ToTable("Abouts");
                 });
 
+            modelBuilder.Entity("MyPortfolioEce.DAL.Entities.AdminProfile", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int>("AdminUserID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CvFilePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProfileImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("AdminUserID");
+
+                    b.ToTable("AdminProfiles");
+                });
+
+            modelBuilder.Entity("MyPortfolioEce.DAL.Entities.AdminUser", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("AdminUsers");
+                });
+
             modelBuilder.Entity("MyPortfolioEce.DAL.Entities.Contact", b =>
                 {
                     b.Property<int>("ContactId")
@@ -305,6 +364,17 @@ namespace MyPortfolioEce.Migrations
                     b.HasKey("ToDoListId");
 
                     b.ToTable("ToDoLists");
+                });
+
+            modelBuilder.Entity("MyPortfolioEce.DAL.Entities.AdminProfile", b =>
+                {
+                    b.HasOne("MyPortfolioEce.DAL.Entities.AdminUser", "AdminUser")
+                        .WithMany()
+                        .HasForeignKey("AdminUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AdminUser");
                 });
 #pragma warning restore 612, 618
         }

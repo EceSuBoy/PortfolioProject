@@ -30,13 +30,21 @@
     <div class="row about-content about-content--buttons">
 
         <div class="col-six tab-full left">
-            <a href="#0" class="btn btn--primary full-width">Download My CV</a>
+            <a href="~/EceSuBoy_CV.pdf" download class="btn btn--primary full-width">Download My CV</a>
+
         </div>
+        <style>
+            html {
+                scroll-behavior: smooth;
+            }
+        </style>
         <div class="col-six tab-full right">
-            <a href="#0" class="btn full-width">Write Me</a>
+            <a href="#contact" class="btn full-width">Write Me</a>
         </div>
 
+
     </div> <!-- end about-content buttons -->
+
     @await Component.InvokeAsync("_ExperienceComponentPartial")
 
 </section> <!-- end about -->

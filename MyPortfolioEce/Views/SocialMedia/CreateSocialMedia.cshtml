@@ -1,0 +1,47 @@
+﻿@model SocialMedia
+
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Social Media</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Adding New Social Media</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can manage Social Medias from the panel down below.
+                        </div>
+
+                        <form method="post">
+                            <label>Name of the Social Media</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+
+                            <label>Url</label>
+                            <input type="text" asp-for="Url" class="form-control" />
+                            <br />
+
+                            <label>Icon</label>
+                            <input type="text" asp-for="Icon" class="form-control" />
+                            <br />
+
+                            <button class="btn btn-primary">Add Social Media</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

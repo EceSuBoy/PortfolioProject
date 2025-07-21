@@ -1,10 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyPortfolioEce.DAL.Context;
 using MyPortfolioEce.DAL.Entities;
+using System.Data;
 
 namespace MyPortfolioEce.Controllers
 {
-	public class ToDoListController : Controller
+    [Authorize(Roles = "Admin")]
+    public class ToDoListController : Controller
 	{
 		MyPortfolioContext context = new MyPortfolioContext();
 		public IActionResult Index()
@@ -59,5 +63,6 @@ namespace MyPortfolioEce.Controllers
 			context.SaveChanges();
 			return RedirectToAction("Index");
 		}
-	}
+
+    }
 }

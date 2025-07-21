@@ -1,0 +1,46 @@
+﻿@model MyPortfolioEce.DAL.Entities.About
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">About Me</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">About Me Info</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can manage About Me from the panel down below.
+                        </div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">SubDescription</th>
+                                    <th scope="col">About Me Detail</th>
+                                    <th scope="col">Update</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                        <td>@Model.Title</td>
+                                    <td>@Html.Raw(@Model.SubDescription)</td>
+                                    <td>@Html.Raw(@Model.Details)</td>
+                                    <td><a href="/AboutMe/UpdateAboutMe/@Model.AboutID" class="btn btn-success">Update</a></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

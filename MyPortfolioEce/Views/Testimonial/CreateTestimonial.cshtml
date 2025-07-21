@@ -1,0 +1,48 @@
+﻿@using System.Web;
+@model Testimonial
+@{
+    ViewData["Title"] = "CreateTestimonial";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content" style="margin-bottom:20em;">
+    <div class="container-fluid">
+        <h4 class="page-title">References</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Adding New Reference</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can manage Testimonials from the panel down below.
+                        </div>
+
+                        <form method="post">
+                            <label>Name & Surname</label>
+                            <input type="text" asp-for="NameSurname" class="form-control" />
+                            <br />
+
+                            <label>Title</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+
+                            <label>Description</label>
+                            <textarea rows="4" class="form-control" asp-for="Description">@Html.Raw(HttpUtility.HtmlEncode(Model?.Description ?? ""))</textarea>
+                            <br />
+
+                            <label>Image Url</label>
+                            <input type="text" asp-for="ImageUrl" class="form-control" />
+                            <br />
+                            <button class="btn btn-primary">Add References</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

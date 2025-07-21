@@ -1,0 +1,45 @@
+﻿@model SocialMedia
+
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Social Medias</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Updating Social Media</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can manage Social Medias from the panel down below.
+                        </div>
+
+                        <form method="post">
+                            <input type="hidden" asp-for="SocialMediaId" />
+                            <label>Company Information</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+
+                            <label>Position of the Work</label>
+                            <input type="text" asp-for="Url" class="form-control" />
+                            <br />
+
+                            <label>Time Interval</label>
+                            <input type="text" asp-for="Icon" class="form-control" />
+                            <br />
+
+                            <button class="btn btn-warning">Update Social Media</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

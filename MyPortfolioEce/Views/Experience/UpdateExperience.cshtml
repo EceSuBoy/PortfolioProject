@@ -35,7 +35,7 @@
                             <br />
 
                             <label>Description</label>
-                            <textarea rows="4" class="form-control" asp-for="Description" />@Html.Raw(HttpUtility.HtmlEncode(Model.Description)) </textarea>
+                            <textarea rows="4" class="form-control" asp-for="Description">@Html.Raw(HttpUtility.HtmlEncode(Model?.Description ?? ""))</textarea>
                             <br />
                             <button class="btn btn-warning">Update Experience</button>
 

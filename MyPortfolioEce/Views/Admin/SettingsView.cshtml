@@ -1,0 +1,42 @@
+﻿@model MyPortfolioEce.Models.AdminSettingsViewModel
+
+@{
+    ViewData["Title"] = "Admin Profile";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Admin Profile</h4>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">@ViewBag.Message</div>
+        }
+
+        <div class="card">
+            <div class="card-header">
+                <strong>Current Information</strong>
+            </div>
+            <div class="card-body">
+                <p><strong>Name:</strong> @Model.Name</p>
+                <p><strong>Surname:</strong> @Model.Surname</p>
+
+                @if (!string.IsNullOrEmpty(Model.ExistingProfileImagePath))
+                {
+                    <p>
+                        <strong>Profile Picture:</strong><br />
+                        <img src="@Model.ExistingProfileImagePath" width="120" />
+                    </p>
+                }
+
+                @if (!string.IsNullOrEmpty(Model.ExistingCvPath))
+                {
+                    <p><strong>CV:</strong> <a href="@Model.ExistingCvPath" target="_blank">Download</a></p>
+                }
+
+                <a href="@Url.Action("Settings", "Admin")" class="btn btn-primary mt-3">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>

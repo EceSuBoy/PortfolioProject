@@ -98,7 +98,7 @@ body {
  * ------------------------------------------------------------------- */
 
 a {
-    color: #862121;
+    color: #9A4BC1;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
@@ -562,7 +562,7 @@ form,
     margin-left: -30px;
     margin-top: -30px;
     padding: 0;
-    background-color: #862121;
+    background-color: #9A4BC1;
     border-radius: 100%;
     -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
     animation: sk-scaleout 1.0s infinite ease-in-out;
@@ -756,7 +756,7 @@ label > input[type="checkbox"], label > input[type="radio"] {
  * ------------------------------------------------------------------- */
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus input:-webkit-autofill, textarea:-webkit-autofill, textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
-    -webkit-text-fill-color: #cf3e3e;
+    -webkit-text-fill-color: #BA55D3;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -830,8 +830,8 @@ button.btn--primary:focus,
 input[type="submit"].btn--primary:focus, 
 input[type="reset"].btn--primary:focus, 
 input[type="button"].btn--primary:focus {
-    background: #862121;
-    border-color: #862121;
+    background: #9A4BC1;
+    border-color: #9A4BC1;
 }
 
 
@@ -860,8 +860,8 @@ input[type="button"].btn--primary:focus {
 }
 
 .btn--stroke:hover, button.btn--stroke:hover {
-    border: 0.3rem solid #862121;
-    color: #862121;
+    border: 0.3rem solid #9A4BC1;
+    color: #9A4BC1;
 }
 
 .btn--pill, button.btn--pill {
@@ -910,7 +910,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .alert-box--error {
     background-color: #ffd1d2;
-    color: #e65153;
+    color: #BA55D3;
 }
 
 .alert-box--success {
@@ -1087,7 +1087,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 }
 
 .stats-tabs li a:hover {
-    color: #862121;
+    color: #9A4BC1;
 }
 
 .stats-tabs li a em {
@@ -1276,7 +1276,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .section-intro h3 {
     font-family: "montserrat-semibold", sans-serif;
     font-size: 2rem;
-    color: #862121;
+    color: #9A4BC1;
     text-transform: uppercase;
     letter-spacing: .15rem;
     margin-top: 0;
@@ -1380,11 +1380,11 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .blog-list .blog-date {
     font-family: "montserrat-regular", sans-serif;
     font-size: 1.5rem;
-    color: #862121;
+    color: #9A4BC1;
 }
 
 .blog-list .blog-date a {
-    color: #862121;
+    color: #9A4BC1;
 }
 
 .blog-list .blog-date a:hover, 
@@ -1409,7 +1409,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .blog-list .blog-cat a:hover, 
 .blog-list .blog-cat a:focus, 
 .blog-list .blog-cat a:active {
-    color: #862121;
+    color: #9A4BC1;
 }
 
 .blog-list .blog-cat a::after {
@@ -1658,10 +1658,10 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     color: #FFFFFF;
 }
 
-.header-nav li.current a {
-    font-family: "montserrat-extrabold", sans-serif;
-    color: #af2b2b;
-}
+    .header-nav li.current a {
+        font-family: "montserrat-extrabold", sans-serif;
+        color: #BA55D3;
+    }
 
 
 /* ------------------------------------------------------------------- 
@@ -1775,7 +1775,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .home-content h3 {
     font-family: "montserrat-bold", sans-serif;
     font-size: 1.8rem;
-    color: #862121;
+    color: #9A4BC1;
     text-transform: uppercase;
     letter-spacing: .5rem;
     position: relative;
@@ -1789,7 +1789,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     content: "";
     width: 60px;
     height: 2px;
-    background-color: #862121;
+    background-color: #9A4BC1;
     margin-top: -1.5px;
     position: absolute;
     left: 0;
@@ -1926,19 +1926,19 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     transform: scale(0.7);
 }
 
-.home-social span {
-    color: #af2b2b;
-    right: 3.6rem;
-    font-size: 1.3rem;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transform: scale(0);
-    -ms-transform: scale(0);
-    transform: scale(0);
-    -webkit-transform-origin: 100% 50%;
-    -ms-transform-origin: 100% 50%;
-    transform-origin: 100% 50%;
-}
+    .home-social span {
+        color: #BA55D3;
+        right: 3.6rem;
+        font-size: 1.3rem;
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        -webkit-transform-origin: 100% 50%;
+        -ms-transform-origin: 100% 50%;
+        transform-origin: 100% 50%;
+    }
 
 .home-social li:hover span {
     opacity: 1;
@@ -2982,7 +2982,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .stats__col--highlight .stats__count::after {
-    background-color: #862121;
+    background-color: #9A4BC1;
 }
 
 .stats__col--highlight h4 {
@@ -3041,7 +3041,7 @@ html.no-csstransitions .home-content__main {
 
 .s-contact {
     background-color: #151515;
-    background-image: url("../images/contact-bg.jpg");
+    background-image: url("../images/starss.jpg");
     background-repeat: no-repeat;
     background-position: center, center;
     padding-top: 13.2rem;
@@ -3094,7 +3094,7 @@ html.no-csstransitions .home-content__main {
     padding: 0 2rem;
     margin: 0;
     color: #FFFFFF;
-    background: #862121;
+    background: #9A4BC1;
 }
 
 .s-contact .form-field label::after {
@@ -3105,7 +3105,7 @@ html.no-csstransitions .home-content__main {
     margin-top: -6px;
     border-top: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-right: 5px solid #862121;
+    border-right: 5px solid #9A4BC1;
 }
 
 .contact__main {
@@ -3149,8 +3149,8 @@ html.no-csstransitions .home-content__main {
 
 .contact__form button {
     margin-top: 4.2rem;
-    background-color: #862121;
-    border-color: #862121;
+    background-color: #9A4BC1;
+    border-color: #9A4BC1;
 }
 
 .message-warning, .message-success {
@@ -3310,7 +3310,7 @@ footer {
 }
 
 footer a, footer a:visited {
-    color: #862121;
+    color: #9A4BC1;
 }
 
 footer a:hover, footer a:focus {

@@ -1,4 +1,5 @@
-﻿@model Experience
+﻿@using System.Web;
+@model Experience
 @{
     ViewData["Title"] = "CreateExperience";
     Layout = "~/Views/Layout/Index.cshtml";
@@ -11,7 +12,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">Experiences List</div>
+                        <div class="card-title">Adding New Experience</div>
                     </div>
                     <div class="card-body">
                         <div class="card-sub">
@@ -32,7 +33,7 @@
                             <br />
 
                             <label>Description</label>
-                            <textarea rows="4" class="form-control" asp-for="Description" /> </textarea>
+                            <textarea rows="4" class="form-control" asp-for="Description">@Html.Raw(HttpUtility.HtmlEncode(Model?.Description ?? ""))</textarea>
                             <br />
                             <button class="btn btn-primary">Add Experience</button>
 

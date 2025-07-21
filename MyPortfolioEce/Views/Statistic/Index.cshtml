@@ -97,8 +97,8 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Visitors</p>
-                                    <h4 class="card-title">1,294</h4>
+                                    <p class="card-category">Experiences</p>
+                                    <h4 class="card-title">@ViewBag.v5</h4>
                                 </div>
                             </div>
                         </div>
@@ -116,8 +116,8 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Sales</p>
-                                    <h4 class="card-title">$ 1,345</h4>
+                                    <p class="card-category">To Do List</p>
+                                    <h4 class="card-title">@ViewBag.v6</h4>
                                 </div>
                             </div>
                         </div>
@@ -135,8 +135,8 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Subscribers</p>
-                                    <h4 class="card-title">1303</h4>
+                                    <p class="card-category">Total Projects</p>
+                                    <h4 class="card-title">@ViewBag.v6</h4>
                                 </div>
                             </div>
                         </div>
@@ -164,85 +164,92 @@
             </div>
         </div>
         <br />
+
+
         <div class="row">
-            <div class="col-md-3">
-                <div class="card card-stats card-warning">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="icon-big text-center">
-                                    <i class="la la-users"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 d-flex align-items-center">
-                                <div class="numbers">
-                                    <p class="card-category">Visitors</p>
-                                    <h4 class="card-title">1,294</h4>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Unread Messages Table -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Unread Messages</div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-stats card-success">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="icon-big text-center">
-                                    <i class="la la-bar-chart"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 d-flex align-items-center">
-                                <div class="numbers">
-                                    <p class="card-category">Sales</p>
-                                    <h4 class="card-title">$ 1,345</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card card-stats card-danger">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="icon-big text-center">
-                                    <i class="la la-newspaper-o"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 d-flex align-items-center">
-                                <div class="numbers">
-                                    <p class="card-category">Subscribers</p>
-                                    <h4 class="card-title">1303</h4>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="card-sub">Your unread messages.</div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Sender</th>
+                                    <th>Subject</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var msg in ViewBag.UnreadMessages as List<MyPortfolioEce.DAL.Entities.Message>)
+                                {
+                                    <tr>
+                                        <td>@msg.MessageId</td>
+                                        <td>@msg.NameSurname</td>
+                                        <td>@msg.Subject</td>
+                                        <td>@msg.SendDate.ToShortDateString()</td>
+                                        <td>
+                                            <a href="/Message/MessageDetail/@msg.MessageId" class="btn btn-sm btn-primary">
+                                                Read
+                                            </a>
+                                        </td>
+                                    </tr>
+                                
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="card card-stats card-primary">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5">
-                                <div class="icon-big text-center">
-                                    <i class="la la-check-circle"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 d-flex align-items-center">
-                                <div class="numbers">
-                                    <p class="card-category">Order</p>
-                                    <h4 class="card-title">576</h4>
-                                </div>
-                            </div>
-                        </div>
+
+            <!-- To-Do List Table -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">To-Do List</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">Your pending tasks.</div>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Task</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var task in ViewBag.ToDoList as List<MyPortfolioEce.DAL.Entities.ToDoList>)
+                                {
+                                    <tr>
+                                        <td>@task.ToDoListId</td>
+                                        <td>@task.Title</td>
+                                        <td>@task.Date.ToShortDateString()</td>
+                                        <td>@(task.Status ? "Done" : "Pending")</td>
+                                        <td>
+                                            <form asp-action="UpdateStatus" method="post">
+                                                <input type="hidden" name="id" value="@task.ToDoListId" />
+                                                <input type="hidden" name="newStatus" value="@(task.Status ? "false" : "true")" />
+                                                <button type="submit" class="btn btn-sm @(task.Status ? "btn-success" : "btn-warning")">
+                                                    @(task.Status ? "Mark as Pending" : "Mark as Done")
+                                                </button>
+                                            </form>
+                                        </td>
+                                    
+                                    </tr>
+                                
+                                }
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <br />
     </div>
 </div>
 

@@ -1,0 +1,46 @@
+﻿@model About
+@using System.Web
+
+@{
+    ViewData["Title"] = "UpdateAboutMe";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">About Me</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Updating About Me Page</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-sub">
+                            You can manage Experiences from the panel down below.
+                        </div>
+
+                        <form method="post">
+                            <input type="hidden" asp-for="AboutID" />
+
+                            <label>Title</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+
+                            <label>SubDescription</label>
+                            <input type="text" asp-for="SubDescription" class="form-control" />
+                            <br />
+
+                            <label>Details</label>
+                            <textarea rows="4" class="form-control" asp-for="Details">@Html.Raw(HttpUtility.HtmlEncode(Model?.Details ?? ""))</textarea>
+
+                            <br />
+                            <button class="btn btn-warning">Update About Me</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
